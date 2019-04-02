@@ -7,33 +7,17 @@ namespace Week4LemonadeStand
 {
     public class Game
     {
-        /// <summary>
-        /// /
-        /// </summary>
-        private int Player2;
+        //member variable (has a)
+        UserInterface UserInterface1;
+        Player Player;
 
-        public UserInterface UserInterface
-        {
-            get => default(UserInterface);
-            set
-            {
-            }
-        }
+        Day Day;
+        
 
-        public UserInterface UserInterface1
-        {
-            get => default(UserInterface);
-            set
-            {
-            }
-        }
+        //constructor (build this)
 
-        public Player Player
-        {
-            get => default(Player);
-            set
-            {
-            }
-        }
+        //member method (can do)
+
+
     }
 }

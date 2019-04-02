@@ -5,8 +5,7 @@ using System.Text;
 
 namespace Week4LemonadeStand
 {
-    public class UserInterface
+    public class BoyChild : Customer
     {
-        //contains all of the ConsoleWritelines
     }
 }
