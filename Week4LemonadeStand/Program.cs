@@ -10,11 +10,15 @@ namespace Week4LemonadeStand
     {
         static void Main(string[] args)
         {
-            Day day = new Day();  //instanciate this class
-            day.DisplayTheDay(); //cycle through the day
+            Store store = new Store();
+            store.PurchaseMoreToRestockInventory();
 
-            Weather weather = new Weather();  //instanciate this class
-            weather.WeatherPicker();  //randomize weather
+            //Day day = new Day();  //instanciate this class
+            //day.DisplayTheDay(); //cycle through the day
+
+            //Weather weather = new Weather();  //instanciate this class
+            //weather.WeatherPicker();  //randomize weather
+
         }
     }
 }

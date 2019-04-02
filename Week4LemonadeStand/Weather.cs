@@ -11,7 +11,7 @@ namespace Week4LemonadeStand
 
 
         //constructor (build this)
-        Day Day;
+        //Day Day; I thought I would something from the day class here
         Random rnd = new Random();
         string[] differentWeatherTypes = {"Sunny", "Rainy", "Cloudy"};
 
@@ -20,15 +20,20 @@ namespace Week4LemonadeStand
         public void WeatherPicker()
         {
             // Generate random indexes for weather types.
-            int mIndex = rnd.Next(differentWeatherTypes.Length); //will randomly pull from list/
-            int zIndex = rnd.Next(differentWeatherTypes.Length); ////will randomly pull from list notice the difference index so tomorrow (may) be different from today
+            int bIndex = rnd.Next(differentWeatherTypes.Length); //will randomly pull from list/
 
             // Display the result.
-            Console.WriteLine("The forecast for today:  {0}", differentWeatherTypes[mIndex]);
-            Console.WriteLine("Tomorrow it will be:     {0}", differentWeatherTypes[zIndex]);
-            Console.ReadLine(); //here as a placeholder to get it to stay on the screen. A method will go here what you want to happen next 
+            Console.WriteLine("Forecast for today:  {0} \n", differentWeatherTypes[bIndex]);
+            //Console.ReadLine(); //here as a placeholder to get it to stay on the screen. A method will go here what you want to happen next 
             //return; want it to run the next method whenever i figure out what the next method is
         }
+
+        public void ActualWeather()//this method will display after player leaves the store and start selling
+        {
+            int aIndex = rnd.Next(differentWeatherTypes.Length); ////will randomly pull from list notice the difference index so tomorrow (may) be different from today
+            Console.WriteLine("The weather for today is: {0}", differentWeatherTypes[aIndex]);
+        }
     }
-}  //use this method or find a method that display days and add 1 until its day 7
-   
+}  
+
+

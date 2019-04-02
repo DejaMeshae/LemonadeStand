@@ -10,13 +10,12 @@ namespace Week4LemonadeStand
         //member variable (has a)
         public double Money;
         Inventory inventory;
-        Store store;
+        
 
         //constructor (build this)
         public Player()
         {
             Money = 20.00; //player starts off with $20
-            store = new Store();
             inventory = new Inventory();
         }
 
