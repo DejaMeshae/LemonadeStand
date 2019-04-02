@@ -7,17 +7,27 @@ namespace Week4LemonadeStand
 {
     public class Day
     {
-        public int randomInt;
-        public int randomNumber;
+        //member variable (has this)
+        int whatDayItIs;
 
-        Customer Customer;
-     
-        Weather Weather;
-       
-
-        public void CycleThroughTheDays()
+        //constructor (build this)
+        public Day()
         {
-            throw new System.NotImplementedException();
+            Random rnd = new Random();
+            whatDayItIs = 0; //to start the day off at 0. 
+
+            //Customer Customer; //this class will have the methods that display weather then connect to the customer willingness to buy or not
+            //Weather Weather;
+
+        }
+
+        //member method (can do)
+        public void DisplayTheDay()
+        {
+            // Add one to the day each go around
+            whatDayItIs++;
+            // Display the result.
+            Console.WriteLine("You are on day:       " + whatDayItIs);
         }
     }
 }
