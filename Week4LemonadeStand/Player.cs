@@ -8,14 +8,14 @@ namespace Week4LemonadeStand
     public class Player
     {
         //member variable (has a)
-        public double Money;
+        public double Wallet;
         Inventory inventory;
         
 
         //constructor (build this)
         public Player()
         {
-            Money = 20.00; //player starts off with $20
+            Wallet = 20.00; //player starts off with $20 what does the f mean like 20f
             inventory = new Inventory();
         }
 

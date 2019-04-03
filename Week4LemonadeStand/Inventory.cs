@@ -24,6 +24,11 @@ namespace Week4LemonadeStand
         }
 
         //member method (can do)
+        public void ShowInventory()
+        {
+            Console.WriteLine("You have: ");
+            Console.ReadLine(); //delete this line later, here to test
+        }
 
 
 
