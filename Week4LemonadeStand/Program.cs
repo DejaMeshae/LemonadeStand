@@ -11,13 +11,11 @@ namespace Week4LemonadeStand
         static void Main(string[] args)
         {
             Store store = new Store();
-            store.PurchaseMoreToRestockInventory();
-
-            //Day day = new Day();  //instanciate this class
-            //day.DisplayTheDay(); //cycle through the day
-
-            //Weather weather = new Weather();  //instanciate this class
-            //weather.WeatherPicker();  //randomize weather
+            Inventory inventory = new Inventory();
+            Player player = new Player();
+            Weather weather = new Weather();
+            Day day = new Day();
+            store.RunGame(inventory, player, store, weather, day); //run ALL the methods
 
         }
     }

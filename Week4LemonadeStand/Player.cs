@@ -9,13 +9,14 @@ namespace Week4LemonadeStand
     {
         //member variable (has a)
         public double Wallet;
-        Inventory inventory;
-        
+        public Inventory inventory;
+
 
         //constructor (build this)
         public Player()
         {
             Wallet = 20.00; //player starts off with $20 what does the f mean like 20f
+
             inventory = new Inventory();
         }
 
@@ -30,5 +31,25 @@ namespace Week4LemonadeStand
         {
             throw new System.NotImplementedException();
         }
+
+
+
+
+        //just testing
+        public void CheckMoneyToMakeSureNotBroke() //instaciate the userinterface class so i can call a method from there
+        {
+            if (Wallet <= 0) //if player have no money left
+            {
+                UserInterface.ExitGameMessage(); //capital U can just called the method because userinterface is static
+                Environment.Exit(0);
+            }
+            else
+            {
+                return;
+            }
+        }
+
+
+
     }
 }

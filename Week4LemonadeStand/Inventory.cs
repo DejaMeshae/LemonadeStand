@@ -8,26 +8,28 @@ namespace Week4LemonadeStand
     public class Inventory
     {
         //member variable (has a)
-        public string iceonhand;
-        public string cupsofsugaronhand;
-        public string papercupsonhand;
-        public string lemonsonhand;
+        public int iceonhand;
+        public int cupsofsugaronhand;
+        public int papercupsonhand;
+        public int lemonsonhand;
 
         //contructor (build this)
         public Inventory()
         {
-            int iceonhand = 0;
-            int cupsofsugaronhand = 0;
-            int papercupsonhand = 0;
-            int lemonsonhand = 0;
-
+            iceonhand = 0;
+            cupsofsugaronhand = 0;
+            papercupsonhand = 0;
+            lemonsonhand = 0;
         }
 
         //member method (can do)
-        public void ShowInventory()
+        public void ShowInventory(Store store, Player player)
         {
-            Console.WriteLine("You have: ");
-            Console.ReadLine(); //delete this line later, here to test
+            Console.WriteLine("You have: " + lemonsonhand + " lemons");
+            Console.WriteLine("You have " + cupsofsugaronhand + " cups of sugar");
+            Console.WriteLine("You have " + iceonhand + " ice cubes");
+            Console.WriteLine("You have " + papercupsonhand + " paper cups \n");
+            store.PurchaseMoreToRestockInventory(store, player); //calls the method from store class through userinterface
         }
 
 

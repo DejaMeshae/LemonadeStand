@@ -8,7 +8,6 @@ namespace Week4LemonadeStand
     public class Game
     {
         //member variable (has a)
-        UserInterface UserInterface; //i think i will use this in the future
         Player Player;
         Day day;  
         Store store;
