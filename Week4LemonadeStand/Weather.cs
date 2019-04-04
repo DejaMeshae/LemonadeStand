@@ -8,12 +8,20 @@ namespace Week4LemonadeStand
     public class Weather
     {
         //member variable
-
+        string condition;
+        int tempurature;
 
         //constructor (build this)
         //Day Day; I thought I would something from the day class here
         Random rnd = new Random();
-        string[] differentWeatherTypes = {"Sunny", "Rainy", "Cloudy"};
+        string[] differentWeatherTypes = {"Sunny", "Rainy", "Cloudy", "Foggy"};
+        string[] differentTemperture = {"68", "56", "75", "82"};
+
+        //public Weather() work on this so as ir calls a weather it will also call a temp
+        //{
+        //    condition = "Sunny";
+        //    tempurature = WeatherPicker();
+        //}
 
 
         ////member method (can do)
@@ -21,18 +29,26 @@ namespace Week4LemonadeStand
         {
             // Generate random indexes for weather types.
             int bIndex = rnd.Next(differentWeatherTypes.Length); //will randomly pull from list/
+            int cIndex = rnd.Next(differentTemperture.Length); //will randomly pull from list/
 
-            // Display the result.
-            Console.WriteLine("Forecast for today:  {0} \n", differentWeatherTypes[bIndex]);
-            //Console.ReadLine(); //here as a placeholder to get it to stay on the screen. A method will go here what you want to happen next 
-            //return; want it to run the next method whenever i figure out what the next method is
+            Console.WriteLine("Forecast for today:  {0}", differentWeatherTypes[bIndex] + " and " + differentTemperture[cIndex] + " degrees \n");
         }
 
         public void ActualWeather()//this method will display after player leaves the store and start selling
         {
             int aIndex = rnd.Next(differentWeatherTypes.Length); ////will randomly pull from list notice the difference index so tomorrow (may) be different from today
-            Console.WriteLine("The weather for today is: {0}", differentWeatherTypes[aIndex]);
+            int cIndex = rnd.Next(differentTemperture.Length); //will randomly pull from list/
+
+            Console.WriteLine("The weather for today is: {0}", differentWeatherTypes[aIndex] + " and " + differentTemperture[cIndex] + " degrees \n");
         }
+
+        //public void TemperturePicker() //instead of creating a seperate method just joined weather picker method
+        //{
+        //    // Generate random indexes for weather types.
+        //    int cIndex = rnd.Next(differentTemperture.Length); //will randomly pull from list/
+        //    Console.WriteLine("Temperture for today:  {0} \n", differentTemperture[cIndex]);
+        //}
+
     }
 }  
 

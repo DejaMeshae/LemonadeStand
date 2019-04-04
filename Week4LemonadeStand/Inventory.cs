@@ -26,7 +26,7 @@ namespace Week4LemonadeStand
         //member method (can do)
         public void ShowInventory(Store store, Player player)
         {
-            Console.WriteLine("You now have $" + player.wallet);
+            Console.WriteLine("You now have $" + player.Wallet);
             Console.WriteLine("You have: " + lemonsonhand + " lemons");
             Console.WriteLine("You have " + cupsofsugaronhand + " cups of sugar");
             Console.WriteLine("You have " + iceonhand + " ice cubes");

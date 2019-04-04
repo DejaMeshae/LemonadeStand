@@ -7,19 +7,39 @@ namespace Week4LemonadeStand
 {
     public class Player
     {
-        //member variable (has a)
-        public double wallet;
+        //private float wallet;
         public Inventory inventory;
+
+        
 
 
         //constructor (build this)
         public Player()
         {
-            wallet = 20.00; //player starts off with $20 what does the f mean like 20f
+            //wallet = 20.00f; //player starts off with $20 what does the f mean like 20f
 
             inventory = new Inventory();
         }
 
+        private double wallet = 20.00;
+        public double Wallet
+        {
+            get
+            {
+                return wallet;
+            }
+            set
+            {
+                if(value <= 0)
+                {
+                    wallet = 0;
+                }
+                else
+                {
+                    wallet = value;
+                }
+            }
+         }
 
 
         //member method (can do)

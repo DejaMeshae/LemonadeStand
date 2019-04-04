@@ -9,6 +9,7 @@ namespace Week4LemonadeStand
     {
         //member variable (has a)
         Player Player;
+        List<Day> Days;
         Day day;  
         Store store;
 
@@ -23,8 +24,14 @@ namespace Week4LemonadeStand
 
 
 
-        //member method (can do)
-
+        //member method (can do) work on this, day method here
+        //public void DisplayDay()
+        //{
+        //    for (int i = 0; i < Days.Count; i++)
+        //    {
+        //        Days[i].RunDay();
+        //    }
+        //}
 
 
     }
