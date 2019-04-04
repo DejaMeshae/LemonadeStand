@@ -91,10 +91,10 @@ namespace Week4LemonadeStand
             }
         }
 
-        internal void IceCubesPerCup(Inventory inventory, Player player)
+        internal void IceCubesPerCup(Inventory inventory, Player player)//may need to delete whats in the parameters is i dont display inventory
         {
             Console.WriteLine("Lets make lemonade!");
-            player.inventory.ShowProductsToMakeLemonade(player);
+            player.inventory.ShowProductsToMakeLemonade(player); //displays inventory
             Console.WriteLine("How many ice cubes would you like in each cup?");
             if (Int32.TryParse(Console.ReadLine(), out iceUsedForRecipe))
             {
@@ -104,6 +104,39 @@ namespace Week4LemonadeStand
             {
                 Console.WriteLine("\n Nope lets try that again! Try numbers");
                 IceCubesPerCup(inventory, player);
+            }
+        }
+
+        internal void CupsOfSugarPerPitcher(Inventory inventory, Player player)
+        {
+            //player.inventory.ShowProductsToMakeLemonade(player); //displays inventory again but dont reflect new inventory after used ice
+            //maybe have inventory display again with new inventory levels
+            Console.WriteLine("How many cups of sugar would you like per pitcher?");
+            if (Int32.TryParse(Console.ReadLine(), out cupsOfSugarUsedForRecipe))
+            {
+                Console.WriteLine("Okay " + cupsOfSugarUsedForRecipe + " cups of sugar per pitcher \n");
+            }
+            else
+            {
+                Console.WriteLine("\n Nope lets try that again! Try numbers");
+                CupsOfSugarPerPitcher(inventory, player);
+            }
+        }
+
+        internal void LemonsUsedPerPitcher(Inventory inventory, Player player)
+        {
+            //player.inventory.ShowProductsToMakeLemonade(player); //displays inventory again but dont reflect new inventory after used ice
+            //maybe have inventory display again with new inventory levels
+            //player.inventory.ShowProductsToMakeLemonade(player); //displays inventory
+            Console.WriteLine("How many lemons would you like per pitcher?");
+            if (Int32.TryParse(Console.ReadLine(), out lemonsUsedForRecipe))
+            {
+                Console.WriteLine("Okay " + lemonsUsedForRecipe + " lemon per pitcher \n");
+            }
+            else
+            {
+                Console.WriteLine("\n Nope lets try that again! Try numbers");
+                LemonsUsedPerPitcher(inventory, player);
             }
         }
         //end here

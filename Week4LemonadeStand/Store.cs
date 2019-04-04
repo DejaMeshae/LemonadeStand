@@ -37,9 +37,11 @@ namespace Week4LemonadeStand
             //day.DisplayTheDay();
             //day.DisplayTheDay();
             PurchaseMoreToRestockInventory(store, player, recipee, inventory); //welcome to store
-            recipee.PricePerCupToSell();
+            recipee.CupsOfSugarPerPitcher(inventory,player);
+            recipee.LemonsUsedPerPitcher(inventory, player);
+            recipee.PricePerCupToSell();//player set the price per cup
             //then the next method to sell the lemonade
-            //Console.ReadLine(); //dont think i need this line
+            //Console.ReadLine(); //delete dont think i need this line
         }
 
         public void PurchaseMoreToRestockInventory(Store store, Player player, Recipee recipee, Inventory inventory)
