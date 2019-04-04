@@ -13,7 +13,7 @@
   <Class Name="Week4LemonadeStand.Player">
     <Position X="0.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACCAAAAAAAAAAAAAAAAAAAAAACAAAAACAAAAAAAAAIA=</HashCode>
+      <HashCode>AACAAAAAACAAAAAAAAAAIAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -37,16 +37,6 @@
       <HashCode>AAAACAIgIAAAAAEgAAAAAEAAAAAQAAAACBQAAQACAAA=</HashCode>
       <FileName>Store.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="Week4LemonadeStand.Day">
-    <Position X="4.5" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAEAAgAAAAAAA=</HashCode>
-      <FileName>Day.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="weather" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Week4LemonadeStand.Weather">
     <Position X="5" Y="4.25" Width="1.5" />
@@ -89,6 +79,16 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>OlderResponsibleAdult.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="Week4LemonadeStand.Day">
+    <Position X="4.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAABAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Day.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="weather" />
+    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

@@ -28,6 +28,14 @@ namespace Week4LemonadeStand
             weather.WeatherPicker();   //forecast for today
             Console.WriteLine("Welcome to Deja's Market you can buy: ");
             differentStuffToBuy.ForEach(Console.WriteLine);//display list
+            Console.WriteLine("You have $" + player.wallet + "\n");
+            //day.DisplayTheDay(); //delete all these and below later. this is for testing day method
+            //day.DisplayTheDay();
+            //day.DisplayTheDay();
+            //day.DisplayTheDay();
+            //day.DisplayTheDay();
+            //day.DisplayTheDay();
+            //day.DisplayTheDay();
             PurchaseMoreToRestockInventory(store, player); //welcome to store
             //then the next method to sell the lemonade
             //Console.ReadLine(); //dont think i need this line
@@ -40,14 +48,13 @@ namespace Week4LemonadeStand
             //Console.WriteLine("Welcome to Deja's Market you can buy: ");
             //differentStuffToBuy.ForEach(Console.WriteLine);//display list
             Console.WriteLine("What would you like to purchase? [L] for Lemons, [S] for Sugar, [I] for Ice, [C] for Cups. \n hit [B] to show your inventory, hit [D] when you are done shopping. \n\n");
-            //Console.ReadLine(); //dont need this line, just as a place holder to get it to show
            
 
-            string purchase = Console.ReadLine().ToLower();
+            string purchase = Console.ReadLine().ToLower();//user can put in upper or lower and it'll auto lower it
             switch (purchase)
             {
                 case "l":
-                    BuyLemons(store, player); // will have to put the entire method here
+                    BuyLemons(store, player); // all of the buy methods are at the bottom
                     break;
                 case "s":
                     BuySugar(store, player);
@@ -70,41 +77,46 @@ namespace Week4LemonadeStand
                     break; // i think break goes here idk. when i remove it theres a red swigly under default. after further research im sure break goes here
             }
         }
+
             public void BuyIce(Store store, Player player)
-            {
-                //priceof100icecubes = .90;
-                howmany = 100; //represent 100 ice cubes
-                player.inventory.iceonhand += howmany; //add 100 ice cube to current ice inventory 
-                player.Wallet -= priceof100icecubes; //subtract .90 from player wallet
-                player.inventory.ShowInventory(store, player);
-            }
+                {
+                    //priceof100icecubes = .90;
+                    howmany = 100; //represent 100 ice cubes
+                    player.inventory.iceonhand += howmany; //add 100 ice cube to current ice inventory 
+                    player.wallet -= priceof100icecubes; //subtract .90 from player wallet
+                    player.CheckWalletToMakeSureNotBroke();
+                    player.inventory.ShowInventory(store, player);
+                }
 
-        public void BuyLemons(Store store, Player player)
-            {
-            //double priceof30lemons = 2.00;
-            howmany = 30; //represent 30 lemons           
-            player.inventory.lemonsonhand += howmany;   //when player buys lemons, their inventory of lemmons goes up by 30
-            player.Wallet -= priceof30lemons; // player wallet minus priceof30lemons  
-            player.inventory.ShowInventory(store, player);
-            }
+            public void BuyLemons(Store store, Player player)
+                {
+                    //double priceof30lemons = 2.00;
+                    howmany = 30; //represent 30 lemons           
+                    player.inventory.lemonsonhand += howmany;  //when player buys lemons, their inventory of lemmons goes up by 30
+                    player.wallet -= priceof30lemons;          // player wallet minus priceof30lemons  
+                    player.CheckWalletToMakeSureNotBroke();
+                    player.inventory.ShowInventory(store, player);
+                }
 
-        public void BuyPaperCups(Store store, Player player)
-            {
-                //priceof45papercups = 1.00;
-                howmany = 45;
-                player.inventory.papercupsonhand += howmany;
-                player.Wallet -= priceof45papercups;
-                player.inventory.ShowInventory(store, player);
-            }
+            public void BuyPaperCups(Store store, Player player)
+                {
+                    //priceof45papercups = 1.00;
+                    howmany = 45;
+                    player.inventory.papercupsonhand += howmany;
+                    player.wallet -= priceof45papercups;
+                    player.CheckWalletToMakeSureNotBroke();
+                    player.inventory.ShowInventory(store, player);
+                }
 
             public void BuySugar(Store store, Player player)
-            {
-                //priceof20cupsofsugar = 1.50;
-                howmany = 20;
-                player.inventory.cupsofsugaronhand += howmany;
-                player.Wallet -= priceof20cupsofsugar;
-                player.inventory.ShowInventory(store, player);
-            }
+                {
+                    //priceof20cupsofsugar = 1.50;
+                    howmany = 20;
+                    player.inventory.cupsofsugaronhand += howmany;
+                    player.wallet -= priceof20cupsofsugar;
+                    player.CheckWalletToMakeSureNotBroke();
+                    player.inventory.ShowInventory(store, player);
+                }
     }
 }
 

@@ -8,48 +8,38 @@ namespace Week4LemonadeStand
     public class Player
     {
         //member variable (has a)
-        public double Wallet;
+        public double wallet;
         public Inventory inventory;
 
 
         //constructor (build this)
         public Player()
         {
-            Wallet = 20.00; //player starts off with $20 what does the f mean like 20f
+            wallet = 20.00; //player starts off with $20 what does the f mean like 20f
 
             inventory = new Inventory();
         }
 
 
-        //member method (can do)
-        public void HowMuchMoneyRemains()
-        {
-            throw new System.NotImplementedException();
-        }
 
+        //member method (can do)
         public void HowMuchMoneyGainedOrLost()
         {
             throw new System.NotImplementedException();
         }
 
 
-
-
-        //just testing
-        public void CheckMoneyToMakeSureNotBroke() //instaciate the userinterface class so i can call a method from there
+        public void CheckWalletToMakeSureNotBroke() //instaciate the userinterface class so i can call a method from there
         {
-            if (Wallet <= 0) //if player have no money left
+            if (wallet <= 0) //if player have no money left
             {
                 UserInterface.ExitGameMessage(); //capital U can just called the method because userinterface is static
-                Environment.Exit(0);
+                //Environment.Exit(0); //abrutly ends the game not sure if I want this in my game
             }
             else
             {
                 return;
             }
         }
-
-
-
     }
 }
