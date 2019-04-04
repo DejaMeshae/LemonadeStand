@@ -9,7 +9,7 @@ namespace Week4LemonadeStand
     {
         //member variable (has a)
         Player Player;
-        List<Day> Days;
+        //List<Day> Days; for method below
         Day day;  
         Store store;
 

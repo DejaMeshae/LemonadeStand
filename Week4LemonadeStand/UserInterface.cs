@@ -18,7 +18,7 @@ namespace Week4LemonadeStand
             //all of the console writes
         }
 
-        public static void ExitGameMessage() //
+        public static void ExitGameMessage() // used in player class
         {
             Console.WriteLine("You have no money.");
         }

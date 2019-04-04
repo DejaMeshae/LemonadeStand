@@ -12,6 +12,7 @@ namespace Week4LemonadeStand
         public int cupsofsugaronhand;
         public int papercupsonhand;
         public int lemonsonhand;
+        public Recipee recipee;
      
 
         //contructor (build this)
@@ -21,6 +22,8 @@ namespace Week4LemonadeStand
             cupsofsugaronhand = 0;
             papercupsonhand = 0;
             lemonsonhand = 0;
+
+            recipee = new Recipee();
         }
 
         //member method (can do)
@@ -35,7 +38,16 @@ namespace Week4LemonadeStand
         }
 
 
+        public bool HaveEnoughSuppliesToSell()//check and make sure they have enough stuff to sell lemonade 
+        {
+            recipee = new Recipee();
 
+            if (papercupsonhand > 0 && lemonsonhand >= recipee.LemonsUsedForRecipe & cupsofsugaronhand >= recipee.CupsOfSugarUsedForRecipe && iceonhand >= recipee.IceUsedForRecipe)
+            {
+                return true;
+            }
+            return false;
+        }
 
 
 
