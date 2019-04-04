@@ -34,7 +34,7 @@ namespace Week4LemonadeStand
             Console.WriteLine("You have " + cupsofsugaronhand + " cups of sugar");
             Console.WriteLine("You have " + iceonhand + " ice cubes");
             Console.WriteLine("You have " + papercupsonhand + " paper cups \n");
-            store.PurchaseMoreToRestockInventory(store, player); //calls the method from store class through userinterface
+            store.PurchaseMoreToRestockInventory(store, player, recipee); //calls the method from store class through userinterface
         }
 
 

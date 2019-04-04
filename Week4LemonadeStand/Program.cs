@@ -15,7 +15,8 @@ namespace Week4LemonadeStand
             Player player = new Player();
             Weather weather = new Weather();
             Day day = new Day();
-            store.RunGame(inventory, player, store, weather, day); //run ALL the methods
+            Recipee recipee = new Recipee();
+            store.RunGame(inventory, player, store, weather, day, recipee); //run ALL the methods
 
         }
     }

@@ -22,7 +22,7 @@ namespace Week4LemonadeStand
 
         //member method (can do)
         //to test all of the methods will delete later...maybe
-        public void RunGame(Inventory inventory, Player player, Store store, Weather weather, Day day)
+        public void RunGame(Inventory inventory, Player player, Store store, Weather weather, Day day, Recipee recipee)
         {
             day.DisplayTheDay();       //this is day 1 
             weather.WeatherPicker();   //forecast for today
@@ -36,12 +36,12 @@ namespace Week4LemonadeStand
             //day.DisplayTheDay();
             //day.DisplayTheDay();
             //day.DisplayTheDay();
-            PurchaseMoreToRestockInventory(store, player); //welcome to store
+            PurchaseMoreToRestockInventory(store, player, recipee); //welcome to store
             //then the next method to sell the lemonade
             //Console.ReadLine(); //dont think i need this line
         }
 
-        public void PurchaseMoreToRestockInventory(Store store, Player player)
+        public void PurchaseMoreToRestockInventory(Store store, Player player, Recipee recipee)
         {
             Console.WriteLine("What would you like to purchase? [L] for Lemons, [S] for Sugar, [I] for Ice, [C] for Cups. \n hit [P] to show the prices, hit [D] when you are done shopping. \n\n");
            
@@ -62,14 +62,14 @@ namespace Week4LemonadeStand
                     break;
                 case "p":
                     differentStuffToBuy.ForEach(Console.WriteLine);//display list
-                    PurchaseMoreToRestockInventory(store, player);
+                    PurchaseMoreToRestockInventory(store, player, recipee);
                     break;
                 case "d":
-                    //done with shopping ready to sell some lemonade
+                    recipee.PricePerCupToSell();
                     break;
                 default:
                     Console.WriteLine("\n Nope lets try that again! Try [L] for Lemons, [S] for Sugar, [I] for Ice, [C] for Cups, hit [B] to show your inventory hit [D] when you are done shopping \n\n");
-                    PurchaseMoreToRestockInventory(store, player);
+                    PurchaseMoreToRestockInventory(store, player, recipee);
                     break; // i think break goes here idk. when i remove it theres a red swigly under default. after further research im sure break goes here
             }
         }
