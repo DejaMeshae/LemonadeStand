@@ -13,7 +13,7 @@ namespace Week4LemonadeStand
         public int cupsOfSugarUsedForRecipe;
         public int paperCupsUsedForRecipe;
         public int lemonsUsedForRecipe;
-        public float pricePerCup;
+        public decimal pricePerCup;
 
         //constructor
         //public Recipee() dont think i need this since i have a get set
@@ -60,7 +60,7 @@ namespace Week4LemonadeStand
             }
         }
 
-        public float PricePerCup
+        public decimal PricePerCup
         {
             get
             {
@@ -77,9 +77,12 @@ namespace Week4LemonadeStand
         internal void PricePerCupToSell()
         {
             Console.WriteLine("How much would you like to charge per cup of lemonade?");
-            if (float.TryParse(Console.ReadLine(), out pricePerCup))
+            if (decimal.TryParse(Console.ReadLine(), out pricePerCup))
             {
-                Console.WriteLine("You have set the price to " + pricePerCup + " a cup");
+                pricePerCup = Math.Round(pricePerCup, 2); //player cant put 343.4643645
+                Console.WriteLine("You have set the price to $" + pricePerCup + " a cup \n");
+                Console.ReadLine();  //delete later, test line
+                //maybe a  a max of $1cup?
             }
             else
             {
@@ -87,5 +90,22 @@ namespace Week4LemonadeStand
                 PricePerCupToSell();
             }
         }
+
+        internal void IceCubesPerCup(Inventory inventory, Player player)
+        {
+            Console.WriteLine("Lets make lemonade!");
+            player.inventory.ShowProductsToMakeLemonade(player);
+            Console.WriteLine("How many ice cubes would you like in each cup?");
+            if (Int32.TryParse(Console.ReadLine(), out iceUsedForRecipe))
+            {
+                Console.WriteLine("Okay " + iceUsedForRecipe + " ice cubes per cup \n");
+            }
+            else
+            {
+                Console.WriteLine("\n Nope lets try that again! Try numbers");
+                IceCubesPerCup(inventory, player);
+            }
+        }
+        //end here
     }
 }

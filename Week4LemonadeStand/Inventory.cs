@@ -27,16 +27,15 @@ namespace Week4LemonadeStand
         }
 
         //member method (can do)
-        public void ShowInventory(Store store, Player player)
+        public void ShowInventory(Store store, Player player, Inventory inventory)
         {
             Console.WriteLine("You now have $" + player.Wallet);
             Console.WriteLine("You have: " + lemonsonhand + " lemons");
             Console.WriteLine("You have " + cupsofsugaronhand + " cups of sugar");
             Console.WriteLine("You have " + iceonhand + " ice cubes");
             Console.WriteLine("You have " + papercupsonhand + " paper cups \n");
-            store.PurchaseMoreToRestockInventory(store, player, recipee); //calls the method from store class through userinterface
+            store.PurchaseMoreToRestockInventory(store, player, recipee, inventory); //calls the method from store class through userinterface
         }
-
 
         public bool HaveEnoughSuppliesToSell()//check and make sure they have enough stuff to sell lemonade 
         {
@@ -49,6 +48,14 @@ namespace Week4LemonadeStand
             return false;
         }
 
+        //may not need this delete later
+        public void ShowProductsToMakeLemonade(Player player)
+        {
+            Console.WriteLine("You have: " + lemonsonhand + " lemons");
+            Console.WriteLine("You have " + cupsofsugaronhand + " cups of sugar");
+            Console.WriteLine("You have " + iceonhand + " ice cubes");
+            Console.WriteLine("You have " + player.inventory.papercupsonhand + " paper cups \n");
+        }
 
 
 

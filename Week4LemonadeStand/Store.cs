@@ -16,7 +16,7 @@ namespace Week4LemonadeStand
         int howmany; //how many/much of the product the player buys
 
         //constructor
-        List<string> differentStuffToBuy = new List<string>{ "30 Lemons for 2.00", "20 Cups Of Sugar for 1.50", "100 Ice Cubes for .60", "45 Paper Cups for 1.00 \n\n" }; //create list of products in the store
+        public List<string> differentStuffToBuy = new List<string>{ "30 Lemons for $2.00", "20 Cups Of Sugar for $1.50", "100 Ice Cubes for $.60", "45 Paper Cups for $1.00 \n\n" }; //create list of products in the store
 
        
 
@@ -36,12 +36,13 @@ namespace Week4LemonadeStand
             //day.DisplayTheDay();
             //day.DisplayTheDay();
             //day.DisplayTheDay();
-            PurchaseMoreToRestockInventory(store, player, recipee); //welcome to store
+            PurchaseMoreToRestockInventory(store, player, recipee, inventory); //welcome to store
+            recipee.PricePerCupToSell();
             //then the next method to sell the lemonade
             //Console.ReadLine(); //dont think i need this line
         }
 
-        public void PurchaseMoreToRestockInventory(Store store, Player player, Recipee recipee)
+        public void PurchaseMoreToRestockInventory(Store store, Player player, Recipee recipee, Inventory inventory)
         {
             Console.WriteLine("What would you like to purchase? [L] for Lemons, [S] for Sugar, [I] for Ice, [C] for Cups. \n hit [P] to show the prices, hit [D] when you are done shopping. \n\n");
            
@@ -49,27 +50,27 @@ namespace Week4LemonadeStand
             switch (purchase)
             {
                 case "l":
-                    BuyLemons(store, player); // all of the buy methods are at the bottom
+                    BuyLemons(store, player, inventory); // all of the buy methods are at the bottom
                     break;
                 case "s":
-                    BuySugar(store, player);
+                    BuySugar(store, player, inventory);
                     break;
                 case "i":
-                    BuyIce(store, player);
+                    BuyIce(store, player,inventory);
                     break;
                 case "c":
-                    BuyPaperCups(store, player);
+                    BuyPaperCups(store, player, inventory);
                     break;
                 case "p":
                     differentStuffToBuy.ForEach(Console.WriteLine);//display list
-                    PurchaseMoreToRestockInventory(store, player, recipee);
+                    PurchaseMoreToRestockInventory(store, player, recipee, inventory);
                     break;
                 case "d":
-                    recipee.PricePerCupToSell();
+                    recipee.IceCubesPerCup(inventory,player);                 
                     break;
                 default:
                     Console.WriteLine("\n Nope lets try that again! Try [L] for Lemons, [S] for Sugar, [I] for Ice, [C] for Cups, hit [B] to show your inventory hit [D] when you are done shopping \n\n");
-                    PurchaseMoreToRestockInventory(store, player, recipee);
+                    PurchaseMoreToRestockInventory(store, player, recipee, inventory);
                     break; // i think break goes here idk. when i remove it theres a red swigly under default. after further research im sure break goes here
             }
         }
@@ -79,7 +80,7 @@ namespace Week4LemonadeStand
             //    return (player.Wallet -= cost);
             //    }
 
-             public void BuyIce(Store store, Player player)
+             public void BuyIce(Store store, Player player, Inventory inventory)
                 {
                     //100icecubes cost .60;
                     //cost = .60f;
@@ -88,39 +89,55 @@ namespace Week4LemonadeStand
                    //WalletMinusCost(player, cost); //method above to subtact .90 from player wallet
                     player.Wallet -= priceof100icecubes;
                     player.CheckWalletToMakeSureNotBroke();
-                    player.inventory.ShowInventory(store, player);
+                    player.inventory.ShowInventory(store, player, inventory);
                 }
 
-             public void BuyLemons(Store store, Player player)
+             public void BuyLemons(Store store, Player player, Inventory inventory)
                 {
                     //double priceof30lemons = 2.00;
                     howmany = 30; //represent 30 lemons           
                     player.inventory.lemonsonhand += howmany;  //when player buys lemons, their inventory of lemmons goes up by 30
                     player.Wallet -= priceof30lemons;          // player wallet minus priceof30lemons  
                     player.CheckWalletToMakeSureNotBroke();
-                    player.inventory.ShowInventory(store, player);
+                    player.inventory.ShowInventory(store, player,inventory);
                 }
 
-            public void BuyPaperCups(Store store, Player player)
+            public void BuyPaperCups(Store store, Player player, Inventory inventory)
                 {
                     //priceof45papercups = 1.00;
                     howmany = 45;
                     player.inventory.papercupsonhand += howmany;
                     player.Wallet -= priceof45papercups;
                     player.CheckWalletToMakeSureNotBroke();
-                    player.inventory.ShowInventory(store, player);
+                    player.inventory.ShowInventory(store, player, inventory);
                 }
 
-            public void BuySugar(Store store, Player player)
+            public void BuySugar(Store store, Player player, Inventory inventory)
                 {
                     //priceof20cupsofsugar = 1.50;
                     howmany = 20;
                     player.inventory.cupsofsugaronhand += howmany;
                     player.Wallet -= priceof20cupsofsugar;
                     player.CheckWalletToMakeSureNotBroke();
-                    player.inventory.ShowInventory(store, player);
+                    player.inventory.ShowInventory(store, player,inventory);
                 }
     }
 }
 
 
+//internal void IceCubesPerCup(Inventory inventory)
+//{
+//    Console.WriteLine("Lets make lemonade!");
+//    inventory.ShowProductsToMakeLemonade();
+//    if (Int32.TryParse(Console.ReadLine(), out iceUsedForRecipe))
+//    {
+//        inventory.ShowProductsToMakeLemonade();
+//        Console.WriteLine("Okay " + iceUsedForRecipe + " ice cubes per cup");
+//        Console.ReadLine(); //to test delete later
+//    }
+//    else
+//    {
+//        Console.WriteLine("\n Nope lets try that again! Try numbers");
+//        IceCubesPerCup(inventory);
+//    }
+//}
