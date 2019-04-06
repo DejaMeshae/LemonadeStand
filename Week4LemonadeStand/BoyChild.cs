@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Week4LemonadeStand
 {
-    public class BoyChild : Customer
+    public class BoyChild: Customer
     {
     }
 }

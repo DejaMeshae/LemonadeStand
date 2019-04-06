@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Week4LemonadeStand
 {
-    public class CoolYoungAdult : Customer
+    public class CoolYoungAdult: Customer
     {
     }
 }

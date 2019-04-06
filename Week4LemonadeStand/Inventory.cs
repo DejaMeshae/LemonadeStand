@@ -18,10 +18,10 @@ namespace Week4LemonadeStand
         //contructor (build this)
         public Inventory()
         {
-            iceonhand = 0;
-            cupsofsugaronhand = 0;
-            papercupsonhand = 0;
-            lemonsonhand = 0;
+            //iceonhand = 0; //might not need this
+            //cupsofsugaronhand = 0;
+            //papercupsonhand = 0;
+            //lemonsonhand = 0;
 
             recipee = new Recipee();
         }
@@ -46,7 +46,7 @@ namespace Week4LemonadeStand
                 return true;
             }
             return false;
-        }
+        }//change to an if else and else cww sold out
 
         //may not need this delete later
         public void ShowProductsToMakeLemonade(Player player)

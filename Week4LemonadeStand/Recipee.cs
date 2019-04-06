@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Week4LemonadeStand
 {
-    public class Recipee
+    public class Recipee //DONE go back and clean up
     {
         //member variable
         //i think I need to set these to private
@@ -13,7 +13,7 @@ namespace Week4LemonadeStand
         public int cupsOfSugarUsedForRecipe;
         public int paperCupsUsedForRecipe;
         public int lemonsUsedForRecipe;
-        public decimal pricePerCup;
+        public float pricePerCup;
 
         //constructor
         //public Recipee() dont think i need this since i have a get set
@@ -60,7 +60,7 @@ namespace Week4LemonadeStand
             }
         }
 
-        public decimal PricePerCup
+        public float PricePerCup
         {
             get
             {
@@ -77,9 +77,9 @@ namespace Week4LemonadeStand
         internal void PricePerCupToSell()
         {
             Console.WriteLine("How much would you like to charge per cup of lemonade?");
-            if (decimal.TryParse(Console.ReadLine(), out pricePerCup))
+            if (float.TryParse(Console.ReadLine(), out pricePerCup))
             {
-                pricePerCup = Math.Round(pricePerCup, 2); //player cant put 343.4643645
+                //pricePerCup = Math.Round(pricePerCup, 2); //player cant put 343.4643645
                 Console.WriteLine("You have set the price to $" + pricePerCup + " a cup \n");
                 Console.ReadLine();  //delete later, test line
                 //maybe a  a max of $1cup?

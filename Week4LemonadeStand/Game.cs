@@ -8,30 +8,22 @@ namespace Week4LemonadeStand
     public class Game
     {
         //member variable (has a)
-        Player Player;
-        //List<Day> Days; for method below
-        Day day;  
+        Player player;
         Store store;
 
 
         //constructor (build this)
         public Game()
         {
-            Player = new Player(); 
-            day = new Day();
+            player = new Player(); 
             store = new Store();
         }
 
+        //member method
+       
 
 
-        //member method (can do) work on this, day method here
-        //public void DisplayDay()
-        //{
-        //    for (int i = 0; i < Days.Count; i++)
-        //    {
-        //        Days[i].RunDay();
-        //    }
-        //}
+
 
 
     }

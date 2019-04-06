@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Week4LemonadeStand
 {
-    public class Store
+    public class Store //done clean up
     {
         //member variable (has a)
         double priceof45papercups = 1.00;
@@ -22,10 +22,12 @@ namespace Week4LemonadeStand
 
         //member method (can do)
         //to test all of the methods will delete later...maybe
-        public void RunGame(Inventory inventory, Player player, Store store, Weather weather, Day day, Recipee recipee)
+        public void RunGame(Inventory inventory, Player player, Store store, Weather weather, Day day, Recipee recipee, Customer customer)
         {
             day.DisplayTheDay();       //this is day 1 
             weather.WeatherPicker();   //forecast for today
+            
+            
             Console.WriteLine("Welcome to Deja's Market you can buy: ");
             differentStuffToBuy.ForEach(Console.WriteLine);//display list
             Console.WriteLine("You have $" + player.Wallet + "\n");
@@ -73,7 +75,7 @@ namespace Week4LemonadeStand
                 default:
                     Console.WriteLine("\n Nope lets try that again! Try [L] for Lemons, [S] for Sugar, [I] for Ice, [C] for Cups, hit [B] to show your inventory hit [D] when you are done shopping \n\n");
                     PurchaseMoreToRestockInventory(store, player, recipee, inventory);
-                    break; // i think break goes here idk. when i remove it theres a red swigly under default. after further research im sure break goes here
+                    break; 
             }
         }
 
@@ -125,21 +127,3 @@ namespace Week4LemonadeStand
                 }
     }
 }
-
-
-//internal void IceCubesPerCup(Inventory inventory)
-//{
-//    Console.WriteLine("Lets make lemonade!");
-//    inventory.ShowProductsToMakeLemonade();
-//    if (Int32.TryParse(Console.ReadLine(), out iceUsedForRecipe))
-//    {
-//        inventory.ShowProductsToMakeLemonade();
-//        Console.WriteLine("Okay " + iceUsedForRecipe + " ice cubes per cup");
-//        Console.ReadLine(); //to test delete later
-//    }
-//    else
-//    {
-//        Console.WriteLine("\n Nope lets try that again! Try numbers");
-//        IceCubesPerCup(inventory);
-//    }
-//}

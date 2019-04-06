@@ -7,9 +7,11 @@ namespace Week4LemonadeStand
 {
     public class Player
     {
-        
+        public Recipee recipee;
         public Inventory inventory;
+       
 
+        private double wallet = 20.00;
         
 
 
@@ -17,9 +19,10 @@ namespace Week4LemonadeStand
         public Player()
         {
             inventory = new Inventory();
+            recipee = new Recipee();
         }
 
-        private double wallet = 20.00;
+        //private double wallet = 20.00; delete later
         public double Wallet
         {
             get
@@ -38,7 +41,6 @@ namespace Week4LemonadeStand
                 }
             }
          }
-
 
         //member method (can do)
         internal void CheckWalletToMakeSureNotBroke() //instaciate the userinterface class so i can call a method from there

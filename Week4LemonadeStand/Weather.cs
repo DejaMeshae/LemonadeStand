@@ -8,22 +8,16 @@ namespace Week4LemonadeStand
     public class Weather
     {
         //member variable
-        string condition;
-        int tempurature;
+        //string condition;
+        //int tempurature;
+
 
         //constructor (build this)
-        //Day Day; I thought I would something from the day class here
         Random rnd = new Random();
-        string[] differentWeatherTypes = {"Sunny", "Rainy", "Cloudy", "Foggy"};
-        string[] differentTemperture = {"68", "56", "75", "82"};
+        string[] differentWeatherTypes = { "Sunny", "Rainy", "Cloudy" }; //this is an array i changed to to a string at the bottom
+        public string[] differentTemperture = { "68", "56", "75" };
 
-        //public Weather() work on this so as ir calls a weather it will also call a temp
-        //{
-        //    condition = "Sunny";
-        //    tempurature = WeatherPicker();
-        //}
-
-
+ 
         ////member method (can do)
         public void WeatherPicker()
         {
