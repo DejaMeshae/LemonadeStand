@@ -26,8 +26,6 @@ namespace Week4LemonadeStand
         {
             day.DisplayTheDay();       //this is day 1 
             weather.WeatherPicker();   //forecast for today
-            
-            
             Console.WriteLine("Welcome to Deja's Market you can buy: ");
             differentStuffToBuy.ForEach(Console.WriteLine);//display list
             Console.WriteLine("You have $" + player.Wallet + "\n");
@@ -42,6 +40,10 @@ namespace Week4LemonadeStand
             recipee.CupsOfSugarPerPitcher(inventory,player);
             recipee.LemonsUsedPerPitcher(inventory, player);
             recipee.PricePerCupToSell();//player set the price per cup
+            recipee.ShowRecipePlayerMade();//shows recipe
+            recipee.UpdatedInventoryAfterRecipeeIsMade(player, inventory, recipee); //make this as the new updated inventory
+
+            //find show updated inventory plug in here
             //then the next method to sell the lemonade
             //Console.ReadLine(); //delete dont think i need this line
         }
@@ -70,10 +72,10 @@ namespace Week4LemonadeStand
                     PurchaseMoreToRestockInventory(store, player, recipee, inventory);
                     break;
                 case "d":
-                    recipee.IceCubesPerCup(inventory,player);                 
+                    recipee.IceCubesPerCup(inventory, player);                 
                     break;
                 default:
-                    Console.WriteLine("\n Nope lets try that again! Try [L] for Lemons, [S] for Sugar, [I] for Ice, [C] for Cups, hit [B] to show your inventory hit [D] when you are done shopping \n\n");
+                    Console.WriteLine("\n Nope lets try that again! Try [L] for Lemons, [S] for Sugar, [I] for Ice, [C] for Cups. \n hit [P] to show the prices, hit [D] when you are done shopping.\n\n");
                     PurchaseMoreToRestockInventory(store, player, recipee, inventory);
                     break; 
             }

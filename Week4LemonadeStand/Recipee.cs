@@ -81,7 +81,6 @@ namespace Week4LemonadeStand
             {
                 //pricePerCup = Math.Round(pricePerCup, 2); //player cant put 343.4643645
                 Console.WriteLine("You have set the price to $" + pricePerCup + " a cup \n");
-                Console.ReadLine();  //delete later, test line
                 //maybe a  a max of $1cup?
             }
             else
@@ -107,7 +106,7 @@ namespace Week4LemonadeStand
             }
         }
 
-        internal void CupsOfSugarPerPitcher(Inventory inventory, Player player)
+            internal void CupsOfSugarPerPitcher(Inventory inventory, Player player)
         {
             //player.inventory.ShowProductsToMakeLemonade(player); //displays inventory again but dont reflect new inventory after used ice
             //maybe have inventory display again with new inventory levels
@@ -131,13 +130,27 @@ namespace Week4LemonadeStand
             Console.WriteLine("How many lemons would you like per pitcher?");
             if (Int32.TryParse(Console.ReadLine(), out lemonsUsedForRecipe))
             {
-                Console.WriteLine("Okay " + lemonsUsedForRecipe + " lemon per pitcher \n");
+                Console.WriteLine("Okay " + lemonsUsedForRecipe + " lemons per pitcher \n");
             }
             else
             {
                 Console.WriteLine("\n Nope lets try that again! Try numbers");
                 LemonsUsedPerPitcher(inventory, player);
             }
+        }
+
+        public void ShowRecipePlayerMade()
+        {
+            Console.WriteLine("Your recipe has {0} lemons, {1} cups of sugar, and {2} ice cubes per cup \n", lemonsUsedForRecipe, cupsOfSugarUsedForRecipe, iceUsedForRecipe);//icecubesnotworking ughhhhhhhhh
+        }
+
+        public void UpdatedInventoryAfterRecipeeIsMade(Player player, Inventory inventory, Recipee recipee) //make this as the new updated inventory
+        {
+            Console.WriteLine("Your inventory now reflect: " + inventory.removeCupsOfSugar + " cups of sugar");
+            Console.WriteLine(" " + inventory.removeCupsOfSugar + " lemons");
+            Console.WriteLine(" " + iceUsedForRecipe + " ice cubes");
+            Console.WriteLine(" " + player.inventory.papercupsonhand + " paper cups \n");
+            Console.ReadLine();//test delete later
         }
         //end here
     }

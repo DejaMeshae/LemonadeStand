@@ -12,17 +12,15 @@ namespace Week4LemonadeStand
         public int cupsofsugaronhand;
         public int papercupsonhand;
         public int lemonsonhand;
+        public int removeCupsOfSugar;
+        public int removeIceCubes;
+        public int removeLemons;
         public Recipee recipee;
-     
+
 
         //contructor (build this)
         public Inventory()
         {
-            //iceonhand = 0; //might not need this
-            //cupsofsugaronhand = 0;
-            //papercupsonhand = 0;
-            //lemonsonhand = 0;
-
             recipee = new Recipee();
         }
 
@@ -45,11 +43,12 @@ namespace Week4LemonadeStand
             {
                 return true;
             }
+            Console.WriteLine("You don't have enough stock to sell");//change to an if else and else cww sold out
             return false;
-        }//change to an if else and else cww sold out
+        }
 
         //may not need this delete later
-        public void ShowProductsToMakeLemonade(Player player)
+        public void ShowProductsToMakeLemonade(Player player) 
         {
             Console.WriteLine("You have: " + lemonsonhand + " lemons");
             Console.WriteLine("You have " + cupsofsugaronhand + " cups of sugar");
@@ -57,12 +56,50 @@ namespace Week4LemonadeStand
             Console.WriteLine("You have " + player.inventory.papercupsonhand + " paper cups \n");
         }
 
+        public int CupsOfSugarAfterMadeRecipe(Recipee recipee, Inventory inventory, Player player)
+        {
+            try
+            {
+                removeCupsOfSugar = player.inventory.cupsofsugaronhand -= recipee.CupsOfSugarUsedForRecipe;
+                return removeCupsOfSugar;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("You do not have that amount in your inventory, try again! \n");
+                recipee.CupsOfSugarPerPitcher(inventory, player);
+                throw;
+            }
+        }
 
+        public int IceCubesOnHandAfterMadeRecipe(Recipee recipee, Inventory inventory, Player player)
+        {
+            try
+            {
+                removeIceCubes = player.inventory.iceonhand -= recipee.iceUsedForRecipe;
+                return removeIceCubes;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("You do not have that amount in your inventory, try again! \n");
+                recipee.IceCubesPerCup(inventory, player);
+                throw;
+            }
+        }
 
-
-
-
-
+        public int LemonsOnHandAfterMadeRecipe(Recipee recipee, Inventory inventory, Player player)
+        {
+            try
+            {
+                removeLemons = player.inventory.lemonsonhand -= recipee.lemonsUsedForRecipe;
+                return removeLemons;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("You do not have that amount in your inventory, try again! \n");
+                recipee.LemonsUsedPerPitcher(inventory, player);
+                throw;
+            }
+        }
 
     }
 }
