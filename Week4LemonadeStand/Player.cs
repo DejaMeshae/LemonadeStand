@@ -22,7 +22,6 @@ namespace Week4LemonadeStand
             recipee = new Recipee();
         }
 
-        //private double wallet = 20.00; delete later
         public double Wallet
         {
             get
@@ -43,16 +42,14 @@ namespace Week4LemonadeStand
          }
 
         //member method (can do)
-        internal void CheckWalletToMakeSureNotBroke() //instaciate the userinterface class so i can call a method from there
+        internal void CheckWalletToMakeSureNotBroke(Player player) //instaciate the userinterface class so i can call a method from there
         {
             if (Wallet <= 0) //if player have no money left
             {
-                UserInterface.ExitGameMessage(); //capital U can just called the method because userinterface is static
-                Console.WriteLine("You ran out of money, the game is now over. Press any key");
-                Console.ReadLine();
-                //want it to go to selling the leomonde with whatever inventory they have, reciepe class will have a method if they have enought invnetory then sell,no the game will keep going. well end at day 7
-                // second idea want to display the player profit/lost then environment exit
-                Environment.Exit(0); //abrutly ends the game not sure if I want this in my game
+                //UserInterface.ExitGameMessage(); //capital U can just called the method because userinterface is static but dont need this
+                Console.WriteLine("You do not have any more money to buy more supplies. Let's go make your recipe");
+                recipee.IceCubesPerCup(inventory, player);
+                //Environment.Exit(0); //abrutly ends the game not sure if I want this in my game
             }
             else
             {

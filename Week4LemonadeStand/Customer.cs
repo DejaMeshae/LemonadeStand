@@ -12,6 +12,8 @@ namespace Week4LemonadeStand
         double percent = 100;
         double chanceToBuy;
         public bool buy;
+        double weatherProbability;
+        double temperatureProbability;
 
         //constructor
         public Customer()
@@ -19,41 +21,38 @@ namespace Week4LemonadeStand
 
         }
 
-        //Need to test
-        //public void ChanceToBuyTemperature(Weather weather)
-        //{
-        //    if (weather.temperature <= 75)
-        //    {
-        //        temperatureProbability = percent * 1.15;
-        //    }
-        //    else if (weather.temperature >= 56)
-        //    {
-        //        temperatureProbability = percent * 1.50;
-        //    }
-        //    else if (weather.temperature >= 68)
-        //    {
-        //        temperatureProbability = percent * 1.30;
-        //    }
-        //}
-
         ////member method
-        //public void ChanceToBuyCondtion(Weather weather)
-        //{
-        //    if (weather.condition == "sunny")
-        //    {
-        //        conditionProbability = percent * 1.85;
-        //    }
-        //    else if (weather.condition == "cloudy" || weather.condition == "partly cloudy")
-        //    {
-        //        conditionProbability = percent * 1.45;
-        //    }
-        //    else if (weather.condition == "rainy" || weather.condition == "foggy")
-        //    {
-        //        conditionProbability = percent * 1.15;
-        //    }
-        //}
+        public void ChanceToBuyTemperature(Weather weather)
+        {
+            if (weather.temperature <= 75)
+            {
+                temperatureProbability = percent * 1.15;
+            }
+            else if (weather.temperature >= 56)
+            {
+                temperatureProbability = percent * 1.30;
+            }
+            else if (weather.temperature >= 68)
+            {
+                temperatureProbability = percent * 1.50;
+            }
+        }
 
-
+        public void ChanceToBuyWeather(Weather weather)
+        {
+            if (weather.weather == "Sunny")
+            {
+                weatherProbability = percent * 1.85;
+            }
+            else if (weather.weather == "Rainy")
+            {
+                weatherProbability = percent * 1.45;
+            }
+            else if (weather.weather == "rainy")
+            {
+                weatherProbability = percent * 1.15;
+            }
+        }
 
         public bool CustomerBuysLemonade(int randomValue)
         {
@@ -68,8 +67,6 @@ namespace Week4LemonadeStand
             }
             return this.buy;
         }
-
-
 
     }
 }

@@ -19,7 +19,7 @@ namespace Week4LemonadeStand
 
         public Day(Random rnd) //??
         {
-            weather = new Weather(); //I think I will need something from the weather class here
+            weather = new Weather(rnd); //I think I will need something from the weather class here
             customer = new Customer();
             this.rnd = rnd;
             totalCustomers = rnd.Next(50, 100);

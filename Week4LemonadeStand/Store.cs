@@ -12,7 +12,6 @@ namespace Week4LemonadeStand
         double priceof20cupsofsugar = 1.50;
         double priceof30lemons = 2.00;
         double priceof100icecubes = .60;
-        //private float cost; //i think i need this idk
         int howmany; //how many/much of the product the player buys
 
         //constructor
@@ -21,10 +20,9 @@ namespace Week4LemonadeStand
        
 
         //member method (can do)
-        //to test all of the methods will delete later...maybe
         public void RunGame(Inventory inventory, Player player, Store store, Weather weather, Day day, Recipee recipee, Customer customer)
         {
-            day.DisplayTheDay();       //this is day 1 
+            day.DisplayTheDay();       //this is day 1 but it still display all days FIX 
             weather.WeatherPicker();   //forecast for today
             Console.WriteLine("Welcome to Deja's Market you can buy: ");
             differentStuffToBuy.ForEach(Console.WriteLine);//display list
@@ -41,11 +39,9 @@ namespace Week4LemonadeStand
             recipee.LemonsUsedPerPitcher(inventory, player);
             recipee.PricePerCupToSell();//player set the price per cup
             recipee.ShowRecipePlayerMade();//shows recipe
-            recipee.UpdatedInventoryAfterRecipeeIsMade(player, inventory, recipee); //make this as the new updated inventory
-
-            //find show updated inventory plug in here
+            weather.ActualWeather(); //then shows the real weather
             //then the next method to sell the lemonade
-            //Console.ReadLine(); //delete dont think i need this line
+            Console.ReadLine(); //delete dont think i need this line
         }
 
         public void PurchaseMoreToRestockInventory(Store store, Player player, Recipee recipee, Inventory inventory)
@@ -81,11 +77,6 @@ namespace Week4LemonadeStand
             }
         }
 
-            //public double WalletMinusCost(Player player, float cost) i think i need this not sure yet
-            //    {
-            //    return (player.Wallet -= cost);
-            //    }
-
              public void BuyIce(Store store, Player player, Inventory inventory)
                 {
                     //100icecubes cost .60;
@@ -94,7 +85,7 @@ namespace Week4LemonadeStand
                     player.inventory.iceonhand += howmany; //add 100 ice cube to current ice inventory 
                    //WalletMinusCost(player, cost); //method above to subtact .90 from player wallet
                     player.Wallet -= priceof100icecubes;
-                    player.CheckWalletToMakeSureNotBroke();
+                    player.CheckWalletToMakeSureNotBroke(player);
                     player.inventory.ShowInventory(store, player, inventory);
                 }
 
@@ -104,7 +95,7 @@ namespace Week4LemonadeStand
                     howmany = 30; //represent 30 lemons           
                     player.inventory.lemonsonhand += howmany;  //when player buys lemons, their inventory of lemmons goes up by 30
                     player.Wallet -= priceof30lemons;          // player wallet minus priceof30lemons  
-                    player.CheckWalletToMakeSureNotBroke();
+                    player.CheckWalletToMakeSureNotBroke(player);
                     player.inventory.ShowInventory(store, player,inventory);
                 }
 
@@ -114,7 +105,7 @@ namespace Week4LemonadeStand
                     howmany = 45;
                     player.inventory.papercupsonhand += howmany;
                     player.Wallet -= priceof45papercups;
-                    player.CheckWalletToMakeSureNotBroke();
+                    player.CheckWalletToMakeSureNotBroke(player);
                     player.inventory.ShowInventory(store, player, inventory);
                 }
 
@@ -124,7 +115,7 @@ namespace Week4LemonadeStand
                     howmany = 20;
                     player.inventory.cupsofsugaronhand += howmany;
                     player.Wallet -= priceof20cupsofsugar;
-                    player.CheckWalletToMakeSureNotBroke();
+                    player.CheckWalletToMakeSureNotBroke(player);
                     player.inventory.ShowInventory(store, player,inventory);
                 }
     }

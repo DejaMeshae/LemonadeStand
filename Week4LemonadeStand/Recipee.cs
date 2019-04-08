@@ -5,10 +5,9 @@ using System.Text;
 
 namespace Week4LemonadeStand
 {
-    public class Recipee //DONE go back and clean up
+    public class Recipee
     {
         //member variable
-        //i think I need to set these to private
         public int iceUsedForRecipe;
         public int cupsOfSugarUsedForRecipe;
         public int paperCupsUsedForRecipe;
@@ -16,14 +15,6 @@ namespace Week4LemonadeStand
         public float pricePerCup;
 
         //constructor
-        //public Recipee() dont think i need this since i have a get set
-        //{
-        //    iceUsedForRecipe = 0;
-        //    cupsOfSugarUsedForRecipe = 0;
-        //    paperCupsUsedForRecipe = 0;
-        //    lemonsUsedForRecipe = 0;
-        //}
-
         public int LemonsUsedForRecipe
         {
             get
@@ -139,19 +130,18 @@ namespace Week4LemonadeStand
             }
         }
 
-        public void ShowRecipePlayerMade()
+        public void ShowRecipePlayerMade()//FIX
         {
             Console.WriteLine("Your recipe has {0} lemons, {1} cups of sugar, and {2} ice cubes per cup \n", lemonsUsedForRecipe, cupsOfSugarUsedForRecipe, iceUsedForRecipe);//icecubesnotworking ughhhhhhhhh
         }
 
-        public void UpdatedInventoryAfterRecipeeIsMade(Player player, Inventory inventory, Recipee recipee) //make this as the new updated inventory
-        {
-            Console.WriteLine("Your inventory now reflect: " + inventory.removeCupsOfSugar + " cups of sugar");
-            Console.WriteLine(" " + inventory.removeCupsOfSugar + " lemons");
-            Console.WriteLine(" " + iceUsedForRecipe + " ice cubes");
-            Console.WriteLine(" " + player.inventory.papercupsonhand + " paper cups \n");
-            Console.ReadLine();//test delete later
-        }
-        //end here
+        //public void UpdatedInventoryAfterRecipeeIsMade(Player player, Inventory inventory, Recipee recipee) //make this as the new updated inventory
+        //{
+        //    Console.WriteLine("Your inventory now reflect: " + inventory.removeCupsOfSugar + " cups of sugar");
+        //    Console.WriteLine(" " + inventory.removeCupsOfSugar + " lemons");
+        //    Console.WriteLine(" " + iceUsedForRecipe + " ice cubes");
+        //    Console.WriteLine(" " + player.inventory.papercupsonhand + " paper cups \n");
+        //}
+
     }
 }

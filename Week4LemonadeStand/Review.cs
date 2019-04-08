@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Week4LemonadeStand
 {
-    class Review //DONE
+    class Review 
     {
         //member variable
         public float totalCupsSold;
@@ -65,7 +65,7 @@ namespace Week4LemonadeStand
             }
         }
 
-        public float IceCubesUsedToday //might delete this later, want to set it up where ice will melt everyday
+        public float IceCubesUsedToday 
         {
             get
             {

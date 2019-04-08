@@ -17,7 +17,7 @@ namespace Week4LemonadeStand
             Store store = new Store();
             Inventory inventory = new Inventory();
             Player player = new Player();
-            Weather weather = new Weather();
+            Weather weather = new Weather(rnd);
             Recipee recipee = new Recipee();
             store.RunGame(inventory, player, store, weather, day, recipee, customer); //run ALL the methods
             //game.StartGame()      
